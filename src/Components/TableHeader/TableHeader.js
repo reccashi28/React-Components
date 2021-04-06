@@ -1,9 +1,15 @@
 
-const TableHeader = () => {
+const TableHeader = ( {headerTitles} ) => {
     return(
-        <div className="tabale-data">
-            <h1>table header</h1>
-        </div>
+      
+    <thead className="table-header">
+        <tr>
+            {headerTitles.map( (title,index) => {
+                return <th key={index} >{title}</th>
+            })}
+        </tr>
+    </thead>
+
     );
 }
 

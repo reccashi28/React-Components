@@ -1,10 +1,12 @@
 import TableHeader from '../TableHeader/TableHeader'
+import CountryDetails from '../CountryDetails/CountryDetails'
 
-const TableData = () => {
+const TableData = ({headerTitles, countries}) => {
     return(
-        <div className="table-data">
-            <TableHeader />
-        </div>
+        <table className="table-data">
+            <TableHeader headerTitles={headerTitles} />
+            <CountryDetails countries = {countries} />
+        </table>
     );
 }
 
