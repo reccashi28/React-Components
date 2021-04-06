@@ -11,7 +11,8 @@ const CountryDetails = ( {countries} ) => {
                             <td>{country.population}</td>
                            <td>{country.languages[0].name}</td>
                             <td>{country.region}</td>
-                    </tr>                     )
+                    </tr>                     
+                    )
                 })
             }
              
