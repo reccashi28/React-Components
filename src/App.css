@@ -9,16 +9,17 @@
 } */
 .App {
   margin: 2rem auto;
-  max-width: 800px;
+  max-width: 1100px;
   /* background-color: aquamarine; */
 }
 
 .search-bar  {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   font-size: 20px;
-  height: 40px;
+  /* height: 40px; */
   border: 2px solid teal;
 }
 
@@ -29,7 +30,8 @@
 }
 
 .search-bar i {
-  font-size: 35px;
+  font-size: 25px;
+  padding-right: 20px;
   cursor: pointer;
 }
 
@@ -51,5 +53,5 @@ img{
 }
 
 td {
-  padding: 20px;
+  padding: 10px;
 }

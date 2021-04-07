@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 function App() {
 
-  const [countries, setCountries] = useState("");
+  const [countries, setCountries] = useState();
   const headerTitles = ["Flag", "Name", "Population", "Language", "Region" ];
 
 
