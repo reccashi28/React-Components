@@ -1,9 +1,8 @@
 //populating details of countries
-const CountryDetails = ( {countries} ) => {
+const CountryDetails = ( {filteredCountries} ) => {
     return(
         <tbody>
-             { countries &&  (
-                 countries.map( (country) => {
+               {  filteredCountries.map( (country) => {
                      return (
                         <tr key={country.name}>
                             <td><img src={country.flag} alt="Flag"/></td>
@@ -13,9 +12,7 @@ const CountryDetails = ( {countries} ) => {
                             <td>{country.region}</td>
                         </tr>                     
                     )
-                })
-             )
-            }
+                })}
         </tbody>
     );
 }

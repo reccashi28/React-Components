@@ -3,10 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* body {
-  width: 100%;
-  background-color: blue;
-} */
+
 .App {
   margin: 2rem auto;
   max-width: 1100px;
@@ -37,7 +34,6 @@
 
 .table-data {
   width: 100%;
-  /* background-color: green; */
   padding: 1rem;
 }
 

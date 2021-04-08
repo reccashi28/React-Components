@@ -5,25 +5,38 @@ import { useState, useEffect } from 'react';
 
 function App() {
 
-  const [countries, setCountries] = useState();
+  const [countries, setCountries] = useState([]);
   const headerTitles = ["Flag", "Name", "Population", "Language", "Region" ];
-
+  const [searchField, setSearchField] = useState('');
+  let filteredCountries;
 
  useEffect( () => {
   fetch('https://restcountries.eu/rest/v2/all')
     .then(response => response.json())
     .then(data => {
       setCountries(data)
-      console.log(data[8].languages)
     })
     .catch( err => console.log('ERROR OCCURED', err))
- }, [] )
-   
+ }, []);
+
+  const onSearchChange = event => {
+    setSearchField(event.target.value)
+  }
+
+  //check that countries is not empty before filtering
+  countries.length && (
+                      filteredCountries = countries.filter( country =>{
+                        return country.name.toLowerCase().includes(searchField.toLowerCase());
+                      }))
   return (
-    <div className="App">
-        <SearchBar />
-        <TableData countries = {countries} headerTitles={headerTitles} />
-    </div>
+  //check if data is not empty before passing in
+    !countries.length ? <h1>Loading data...</h1> :
+                      (
+                        <div className="App">
+                            <SearchBar onSearchChange={onSearchChange}/>
+                            <TableData headerTitles={headerTitles} filteredCountries={filteredCountries} />
+                        </div>
+                      )
   );
 }
 
