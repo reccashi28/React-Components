@@ -6,7 +6,6 @@ const TableData = ({headerTitles, filteredCountries}) => {
         <table className="table-data">
                 <TableHeader headerTitles={headerTitles} />
                 <CountryDetails filteredCountries={filteredCountries} />
-
         </table>
     );
 }

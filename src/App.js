@@ -23,11 +23,12 @@ function App() {
     setSearchField(event.target.value)
   }
 
-  //check that countries is not empty before filtering
+  //check that countries is not empty
   countries.length && (
                       filteredCountries = countries.filter( country =>{
                         return country.name.toLowerCase().includes(searchField.toLowerCase());
-                      }))
+  }))
+
   return (
   //check if data is not empty before passing in
     !countries.length ? <h1>Loading data...</h1> :
