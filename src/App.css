@@ -51,3 +51,7 @@ img{
 td {
   padding: 10px;
 }
+
+.hide {
+  display: none;
+}
