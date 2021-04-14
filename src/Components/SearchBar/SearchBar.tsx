@@ -1,7 +1,11 @@
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 
-const SearchBar = ( {onSearchChange}) => {
-    const inputFocus = useRef();
+type SearchProps = {
+    onSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const SearchBar = ( {onSearchChange}: SearchProps) => {
+    const inputFocus = React.useRef() as React.MutableRefObject<HTMLInputElement>;
 
     const hideSearchImage = () => {
         inputFocus.current.style.display = "none";

@@ -1,14 +1,15 @@
 import './App.css';
 import SearchBar from './Components/SearchBar/SearchBar';
 import TableData from './Components/TableData/TableData';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Country } from './types';
 
 function App() {
 
-  const [countries, setCountries] = useState([]);
-  const headerTitles = ["Flag", "Name", "Population", "Language", "Region" ];
+  const [countries, setCountries] = useState<Country[]>([]);
+  const headerTitles: string[] = ["Flag", "Name", "Population", "Language", "Region" ];
   const [searchField, setSearchField] = useState('');
-  let filteredCountries;
+  let filteredCountries: Country[] = [];
 
  useEffect( () => {
   fetch('https://restcountries.eu/rest/v2/all')
@@ -19,7 +20,7 @@ function App() {
     .catch( err => console.log('ERROR OCCURED', err))
  }, []);
 
-  const onSearchChange = event => {
+  const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchField(event.target.value)
   }
 

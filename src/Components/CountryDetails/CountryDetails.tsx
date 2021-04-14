@@ -1,5 +1,12 @@
 //populating details of countries
-const CountryDetails = ( {filteredCountries} ) => {
+import React from 'react';
+import { Country } from '../../types';
+
+type CountryDetailsProps = {
+    filteredCountries: Country[]
+}
+
+const CountryDetails = ( {filteredCountries}: CountryDetailsProps ) => {
     return(
         <tbody>
                {  filteredCountries.map( (country) => {

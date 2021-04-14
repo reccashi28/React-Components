@@ -1,5 +1,10 @@
+import React from 'react';
 
-const TableHeader = ( {headerTitles} ) => {
+type TableHeaderProps = {
+    headerTitles: string[]
+}
+
+const TableHeader = ( {headerTitles}: TableHeaderProps) => {
     return(
       
     <thead className="table-header">

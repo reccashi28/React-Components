@@ -1,7 +1,14 @@
+import React from 'react';
 import TableHeader from '../TableHeader/TableHeader'
 import CountryDetails from '../CountryDetails/CountryDetails'
+import { Country } from '../../types';
 
-const TableData = ({headerTitles, filteredCountries}) => {
+type TableDataProps = {
+    headerTitles: string[]
+    filteredCountries: Country[]
+}
+
+const TableData = ({headerTitles, filteredCountries}: TableDataProps) => {
     return(
         <table className="table-data">
                 <TableHeader headerTitles={headerTitles} />
