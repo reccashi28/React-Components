@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 type SearchProps = {
     onSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
